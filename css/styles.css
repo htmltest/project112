@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {outline:none; box-sizing:border-box}
+
+html {min-width:1260px; height:100%}
+
+body {min-width:1260px; height:100%; margin:0; padding:0; font:14px/24px "PT Sans", sans-serif; color:#262626; background:#f5f5f5; -webkit-text-size-adjust:100%}
+
+a {color:#1c73ca}
+
+img {border:none; max-width:100%}
+
+::-ms-clear {display:none}
+
+.side {position:fixed; z-index:99; left:0; top:0; bottom:0; width:85px; background:#fff; box-shadow:1px 0 0 0 #dfe2e5; overflow:auto}
+.logo {width:40px; height:41px; margin:16px 0 0 24px; background:url(../images/logo.png)}
+
+nav {margin:12px 0 0 0; border-top:1px solid #dfe2e5}
+nav ul {margin:0; padding:0; list-style:none}
+nav ul li {margin:22px 0 0 0; padding:0}
+nav ul li:first-child {border-bottom:1px solid #e8e8e8; padding:6px 0 27px 0}
+nav ul li.active {font-weight:bold}
+nav ul li a {display:block; padding:0 10px; text-decoration:none; color:#7f8fa4; font-size:11px; line-height:12px; text-align:center; position:relative}
+nav ul li.active a::before {content:""; display:block; position:absolute; left:0; top:0; bottom:0; width:4px; background:#7ac142}
+.nav-icon {line-height:0}
+.nav-icon g {fill:#7f8fa4}
+nav ul li.active .nav-icon g,
+nav ul li a:hover .nav-icon g {fill:#7ac142}
+.nav-title {margin:8px 0 0 0; min-height:24px}
+
+.wrapper {min-width:1260px; width:100%; min-height:100%; position:relative; overflow:hidden}
+.wrapper-inner {padding:0 0 128px 85px}
+
+.page-auth .wrapper-inner {padding-left:0}
+
+header {background:#fff; box-shadow:0 -1px 0 0 #dfe2e5}
+header::after {content:""; display:block; clear:both}
+
+.header-title {float:left; font-size:20px; line-height:24px; color:#354052; padding:23px 0 0 20px}
+
+.header-views {float:left; margin:0; list-style:none; padding:25px 0 0 24px; line-height:20px}
+.header-views li {float:left; margin:0; padding:0 14px; border-left:1px solid #dfe3e9}
+.header-views li:first-child {border-left:none}
+.header-views li a {display:block; height:20px; line-height:20px}
+.header-views svg {vertical-align:middle; margin:-3px 0 0 0}
+.header-views svg g {fill:#ced0da}
+.header-views li a:hover svg g,
+.header-views li.active a svg g {fill:#2ea1f8}
+
+.header-user {float:right; position:relative; border-left:1px solid #afafaf}
+.header-user-link {display:block; line-height:70px; color:#595959; text-decoration:none; padding:0 30px}
+.header-user-link::after {content:""; display:inline-block; vertical-align:middle; width:7px; height:4px; background:url(../images/dropdown.svg); margin:-2px 0 0 13px}
+
+.header-btns {float:right; padding:17px 30px 0 0}
+.header-btn {float:left; height:36px; line-height:36px; text-decoration:none; color:#fff; background-image:linear-gradient(to top, #1991eb, #2da1f8), linear-gradient(#2198f0, #2198f0); padding:0 20px; border-radius:4px}
+.header-btn-add-icon {display:inline-block; vertical-align:middle; width:17px; height:1px; background:#fff; margin:-2px 10px 0 0; position:relative}
+.header-btn-add-icon::after {content:""; display:block; width:1px; height:17px; position:absolute; left:8px; top:-8px; background:#fff}
+
+.auth-logo {float:left; height:70px}
+.auth-logo .logo {float:left; margin:19px 0 0 20px}
+.logo-title {float:left; width:82px; height:22px; margin:27px 0 0 7px; background:url(../images/logo-title.png)}
+
+.container {padding:0 29px 0 22px}
+
+.table-list {margin:21px 0}
+.table-list table {width:100%; border-collapse:collapse; background:#fff; border:1px solid #dfe2e5}
+.table-list th {vertical-align:top; color:#7f8fa4; font-size:14px; line-height:17px; font-weight:bold; text-align:left; padding:15px 30px 14px 0}
+.table-list th:first-child {padding-left:30px}
+.table-list th.right {text-align:right}
+.table-list td {vertical-align:top; line-height:17px; border-top:1px solid #dfe2e5; padding:14px 30px 13px 0; color:#424242}
+.table-list td:first-child {padding-left:30px}
+.table-list td.right {text-align:right}
+.projects-list-title a {text-decoration:none}
+.projects-list-place {padding:4px 0 0 0; font-size:12px; line-height:14px; color:#7f8fa4}
+.projects-list-status {float:right; clear:right; font-size:12px; line-height:28px; padding:0 6px; border-radius:5px; color:#808183; margin:-5px 0 0 0}
+.project-list-status-consideration .projects-list-status {background:#ffdca1}
+.project-list-status-working .projects-list-status {background:#a0e28a}
+.project-list-status-draft .projects-list-status {background:#dedede}
+.projects-list-manager {float:right; clear:right; font-size:12px; line-height:14px; padding:6px 0 0 0}
+.projects-list-manager a {text-decoration:none; color:#3564a2; border-bottom:1px dashed #a5abba}
+
+.pager {margin:40px 0 0 0}
+.pager::after {content:""; display:block; clear:both}
+.pager a,
+.pager span {float:left; width:37px; height:36px; border:1px solid #e6eaee; background:#fff; text-align:center; text-decoration:none; line-height:34px; color:rgba(53, 64, 82, 0.5); margin:0 -1px 0 0}
+.pager a:first-child {border-radius:4px 0 0 4px}
+.pager a:last-child {border-radius:0 4px 4px 0}
+.pager a.active {cursor:default}
+.pager a.active,
+.pager a:hover {color:#354052}
+.pager a svg g,
+.pager span svg g {fill:#ced0da}
+.pager a svg {vertical-align:middle; margin:-2px 0 0 0}
+.pager a:hover svg g {fill:#354052}
+
+.auth {width:820px; margin:101px auto 0 auto}
+.auth::after {content:""; display:block; clear:both}
+.auth-form {float:left; width:340px; height:458px; background:#fff; border-radius:4px 0 0 4px; padding:0 30px}
+.auth-form form {margin:0; padding:0}
+.auth-form-title {font-size:24px; line-height:29px; color:#354052; padding:44px 0 0 0}
+.auth-welcome {float:left; width:480px; height:458px; background:url(../images/auth-welcome-bg.jpg); border-radius:0 4px 4px 0}
+.auth-form-label {line-height:17px; color:#7f8fa4; padding:20px 0 7px 0}
+.auth-form-input input {border:1px solid #dfe3e9; font:14px/19px "PT Sans", sans-serif; color:#354052; vertical-align:top; margin:0; padding:6px 13px 9px 13px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:4px; background:#fff; -webkit-appearance:none}
+.auth-form-submit {margin:41px 0 0 0}
+.auth-form-submit input {display:block; border-radius:4px; background-image:linear-gradient(to bottom, #39b54a, #34aa44 98%); border:1px solid #249533; margin:0; padding:0; outline:none; width:100%; text-decoration:none; height:36px; box-sizing:border-box; color:#fff; text-align:center; font:14px/34px "PT Sans", sans-serif; -webkit-appearance:none; cursor:pointer}
+
+footer {height:72px; position:relative; margin:-72px 0 0 85px; padding:16px 0 0 0; background:#e4e7eb; color:#9ea4b1; font-size:12px; line-height:17px}
+footer::after {content:""; display:block; clear:both}
+footer p {margin:0; padding:0}
+footer a {color:#9ea4b1}
+
+.page-auth footer {margin-left:0}
+
+.copyrights {float:left; padding:0 0 0 27px}
+.page-auth .copyrights {padding:0 0 0 30px}
+
+.policy {float:right; padding:0 58px 0 0; text-align:right}
+.page-auth .policy {padding:0 30px 0 0}
