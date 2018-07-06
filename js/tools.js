@@ -46,6 +46,20 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $.validator.addMethod('maskPhone',
+        function(value, element) {
+            if (value == '') {
+                return true;
+            }
+            return /^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/.test(value);
+        },
+        'Не соответствует формату'
+    );
+
+    $('form').each(function() {
+        initForm($(this));
+    });
+
 });
 
 function windowOpen(linkWindow, dataWindow, callbackWindow) {
@@ -118,4 +132,41 @@ function windowClose() {
         $('html').removeClass('window-open');
         $('body').css({'margin-right': 0});
     }
+}
+
+function initForm(curForm) {
+    curForm.find('input.maskPhone').mask('+7 (999) 999-99-99');
+
+
+    curForm.find('.form-file input').change(function() {
+        var curInput = $(this);
+        var curField = curInput.parent().parent().parent().parent();
+        curField.find('.form-file-name').html(curInput.val().replace(/.*(\/|\\)/, ''));
+        curField.find('label.error').remove();
+        curField.removeClass('error');
+    });
+
+    curForm.validate({
+        ignore: '',
+        invalidHandler: function(form, validatorcalc) {
+            validatorcalc.showErrors();
+            checkErrors();
+        }
+    });
+}
+
+function checkErrors() {
+    $('.form-checkbox, .form-file').each(function() {
+        var curField = $(this);
+        if (curField.find('input.error').length > 0) {
+            curField.addClass('error');
+        } else {
+            curField.removeClass('error');
+        }
+        if (curField.find('input.valid').length > 0) {
+            curField.addClass('valid');
+        } else {
+            curField.removeClass('valid');
+        }
+    });
 }

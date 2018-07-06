@@ -32,23 +32,35 @@
                 <!-- auth -->
                 <div class="auth">
                     <div class="auth-form">
-                        <div class="auth-form-logo"></div>
-                        <form action="#" method="post">
-                            <div class="auth-form-title">Авторизация</div>
-                            <div class="auth-form-label">Ваш логин</div>
-                            <div class="auth-form-input"><input type="text" name="login" value="" class="required" /></div>
-                            <div class="auth-form-label">Пароль</div>
-                            <div class="auth-form-input"><input type="password" name="password" value="" class="required" /></div>
-                            <div class="auth-form-checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember" />
-                                    <span class="auth-form-checkbox-icon"></span>
-                                    <span class="auth-form-checkbox-text">Запомнить меня на этом компьютере</span>
-                                </label>
+                        <h1>Восстановление пароля</h1>
+
+                        <div class="form-error">
+                            <div class="form-error-title">Произошла ошибка</div>
+                            <div class="form-error-text">Неверный логин или пароль.<br></div>
+                        </div>
+
+                        <form name="bform" method="post" target="_top" action="/?forgot_password=yes">
+                            <input type="hidden" name="backurl" value="/" />
+                            <input type="hidden" name="AUTH_FORM" value="Y" />
+                          	<input type="hidden" name="TYPE" value="SEND_PWD">
+
+                            <div class="auth-form-hint">Если вы забыли пароль, введите логин или E-Mail.<br /> Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.</div>
+
+                            <div class="form-row">
+                                <div class="form-input"><span class="form-input-label">Логин</span><input type="text" name="USER_LOGIN" maxlength="50" value="" class="" /></div>
                             </div>
-                            <div class="auth-form-submit"><input type="submit" value="Войти" /></div>
-                            <div class="auth-form-forgot"><a href="#">Забыли пароль?</a></div>
+
+                            <div class="form-row">
+                                <div class="form-input"><span class="form-input-label">или e-mail</span><input type="text" name="USER_EMAIL" maxlength="50" value="" class="email" /></div>
+                            </div>
+
+                            <div class="auth-form-row">
+                                <div class="auth-form-submit">
+                                    <input type="submit" value="Отправить" class="btn" />
+                                </div>
+                            </div>
                         </form>
+                        <div class="auth-form-forgot"><a href="/?login=yes">Вспомнили пароль? Авторизируйтесь!</a></div>
                     </div>
 
                     <div class="auth-welcome">
