@@ -100,9 +100,11 @@ $(document).ready(function() {
                     source: data,
                     select: function(event, ui) {
                         var curVariants = $(this).parents().filter('.header-projects-filter-variants');
-                        curVariants.find('.form-input').before('<div class="header-projects-filter-variant"><input type="hidden" name="cities[]" value="' + ui.item.value + '" />' + ui.item.value + '<span class="header-projects-filter-variant-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></span></div>');
+                        if (curVariants.find('.header-projects-filter-variant input[value="' + ui.item.value + '"]').length == 0) {
+                            curVariants.find('.form-input').before('<div class="header-projects-filter-variant"><input type="hidden" name="theatres[]" value="' + ui.item.value + '" />' + ui.item.value + '<span class="header-projects-filter-variant-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></span></div>');
+                            updateFilter();
+                        }
                         this.value = '';
-                        updateFilter();
                         return false;
                     }
                 }).autocomplete('instance')._renderItem = function(ul, item) {
@@ -123,9 +125,11 @@ $(document).ready(function() {
                     source: data,
                     select: function(event, ui) {
                         var curVariants = $(this).parents().filter('.header-projects-filter-variants');
-                        curVariants.find('.form-input').before('<div class="header-projects-filter-variant"><input type="hidden" name="cities[]" value="' + ui.item.value + '" />' + ui.item.value + '<span class="header-projects-filter-variant-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></span></div>');
+                        if (curVariants.find('.header-projects-filter-variant input[value="' + ui.item.value + '"]').length == 0) {
+                            curVariants.find('.form-input').before('<div class="header-projects-filter-variant"><input type="hidden" name="places[]" value="' + ui.item.value + '" />' + ui.item.value + '<span class="header-projects-filter-variant-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></span></div>');
+                            updateFilter();
+                        }
                         this.value = '';
-                        updateFilter();
                         return false;
                     }
                 }).autocomplete('instance')._renderItem = function(ul, item) {
@@ -146,9 +150,11 @@ $(document).ready(function() {
                     source: data,
                     select: function(event, ui) {
                         var curVariants = $(this).parents().filter('.header-projects-filter-variants');
-                        curVariants.find('.form-input').before('<div class="header-projects-filter-variant"><input type="hidden" name="cities[]" value="' + ui.item.value + '" />' + ui.item.value + '<span class="header-projects-filter-variant-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></span></div>');
+                        if (curVariants.find('.header-projects-filter-variant input[value="' + ui.item.value + '"]').length == 0) {
+                            curVariants.find('.form-input').before('<div class="header-projects-filter-variant"><input type="hidden" name="cities[]" value="' + ui.item.value + '" />' + ui.item.value + '<span class="header-projects-filter-variant-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></span></div>');
+                            updateFilter();
+                        }
                         this.value = '';
-                        updateFilter();
                         return false;
                     }
                 }).autocomplete('instance')._renderItem = function(ul, item) {
@@ -167,9 +173,48 @@ $(document).ready(function() {
     $('body').on('click', '.project-add-group-add-link a', function(e) {
         var curBlock = $(this).parents().filter('.project-add-group');
         curBlock.find('.project-add-group-content').append(curBlock.find('.project-add-group-add-template').html());
-        curBlock.find('.project-add-group-headers').css({'display': 'table'});
-        $('.project-add-place-content').sortable('refresh');
-        $('.project-add-group-content').sortable('refresh');
+        if (curBlock.find('.project-add-group-content .project-add-group-row').length > 0) {
+            curBlock.find('.project-add-group-headers').css({'display': 'table'});
+        }
+        if (curBlock.find('.project-add-place-content .project-add-group-row').length == 0) {
+            curBlock.find('.project-add-group-content .project-add-group-headers').css({'display': 'none'});
+        }
+        curBlock.find('.project-add-group-content .project-add-place-header-title input:not(.ui-autocomplete-input)').each(function() {
+            var curInput = $(this);
+            $.ajax({
+                url: 'ajax/filter-place.json',
+                dataType: 'json',
+                success: function(data) {
+                    curInput.autocomplete({
+                        minLength: 0,
+                        source: data,
+                        select: function(event, ui) {
+                            if (typeof ($(this).data('oldvalue')) != 'undefined') {
+                                if ($(this).data('oldvalue') != ui.item.value) {
+                                    if (confirm('Все введеные данные по спектаклям будут удалены')) {
+                                        $(this).data('oldvalue', ui.item.value);
+                                        this.value = ui.item.value;
+                                        $(this).parents().filter('.project-add-place').find('.project-add-place-content').html('');
+                                        reloadProjectAddPlaces($(this));
+                                    } else {
+                                        this.value = $(this).data('oldvalue');
+                                    }
+                                } else {
+                                    this.value = ui.item.value;
+                                }
+                            } else {
+                                $(this).data('oldvalue', ui.item.value);
+                                this.value = ui.item.value;
+                                reloadProjectAddPlaces($(this));
+                            }
+                            return false;
+                        }
+                    }).autocomplete('instance')._renderItem = function(ul, item) {
+                        return $('<li>').append('<div>' + item.value + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                    };
+                }
+            });
+        });
         e.preventDefault();
     });
 
@@ -177,8 +222,7 @@ $(document).ready(function() {
         var curBlock = $(this).parents().filter('.project-add-place');
         curBlock.find('.project-add-place-content').append(curBlock.find('.project-add-place-show-add-template').html());
         curBlock.find('.project-add-group-headers').css({'display': 'table'});
-        $('.project-add-place-content').sortable('refresh');
-        $('.project-add-group-content').sortable('refresh');
+        curBlock.find('.project-add-place-content').find('.form-input-date_').removeClass('form-input-date_').addClass('form-input-date');
         curBlock.find('.project-add-place-content').find('.form-input-date input').each(function() {
             $(this).datepicker({
                 dateFormat: dateFormat,
@@ -194,14 +238,12 @@ $(document).ready(function() {
             var curBlock = $(this).parents().filter('.project-add-group-row');
             var curBlockP = $(this).parents().filter('.project-add-group');
             curBlock.remove();
-            if (curBlockP.find('.project-add-group-content *').length == 0) {
+            if (curBlockP.find('.project-add-group-content .project-add-group-row').length == 0) {
                 curBlockP.find('.project-add-group-headers').css({'display': 'none'});
             }
-            if (curBlockP.find('.project-add-place-content *').length == 0) {
-                curBlockP.find('.project-add-group-headers').css({'display': 'none'});
+            if (curBlockP.find('.project-add-place-content .project-add-group-row').length == 0) {
+                curBlockP.find('.project-add-group-content .project-add-group-headers').css({'display': 'none'});
             }
-            $('.project-add-place-content').sortable('refresh');
-            $('.project-add-group-content').sortable('refresh');
         }
         e.preventDefault();
     });
@@ -210,8 +252,10 @@ $(document).ready(function() {
         if (confirm('Вы подтверждаете удаление?')) {
             var curBlock = $(this).parents().filter('.project-add-place');
             curBlock.remove();
-            $('.project-add-place-content').sortable('refresh');
-            $('.project-add-group-content').sortable('refresh');
+            var curBlockP = $(this).parents().filter('.project-add-group');
+            if (curBlockP.find('.project-add-place-content .project-add-group-row').length == 0) {
+                curBlockP.find('.project-add-group-headers').css({'display': 'none'});
+            }
         }
         e.preventDefault();
     });
@@ -376,7 +420,29 @@ function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
                 success: function(data) {
                     curInput.autocomplete({
                         minLength: 0,
-                        source: data
+                        source: data,
+                        select: function(event, ui) {
+                            if (typeof ($(this).data('oldvalue')) != 'undefined') {
+                                if ($(this).data('oldvalue') != ui.item.value) {
+                                    if (confirm('Все введеные данные будут удалены')) {
+                                        $(this).data('oldvalue', ui.item.value);
+                                        this.value = ui.item.value;
+                                        $('.project-add-place-content').html('');
+                                        $('.project-add-group-content').html('');
+                                        reloadProjectAdd();
+                                    } else {
+                                        this.value = $(this).data('oldvalue');
+                                    }
+                                } else {
+                                    this.value = ui.item.value;
+                                }
+                            } else {
+                                $(this).data('oldvalue', ui.item.value);
+                                this.value = ui.item.value;
+                                reloadProjectAdd();
+                            }
+                            return false;
+                        }
                     }).autocomplete('instance')._renderItem = function(ul, item) {
                         return $('<li>').append('<div>' + item.value + '<span>' + item.desc + '</span></div>').appendTo(ul);
                     };
@@ -470,5 +536,46 @@ function updateFilter() {
         success: function(data) {
             $('#projects-container').html(data);
         }
+    });
+}
+
+function reloadProjectAdd() {
+    var curTheatre = $('#project-theatre').val();
+    $('.project-add-load').addClass('loading');
+    $.ajax({
+        type: 'POST',
+        url: 'ajax/project-add-shows.json',
+        dataType: 'json',
+        data: JSON.stringify({'theatre': curTheatre}),
+        cache: false
+    }).done(function(data) {
+        var newHTML = '';
+        for (var i = 0; i < data.length; i++) {
+            newHTML += '<li><span data-id="' + data[i].id + '">' + data[i].name + '</span></li>';
+        }
+        $('.project-add-place-show-add-template .project-add-group-cell-07 .form-dropdown-list ul li span').each(function() {
+            $(this).parent().remove();
+        });
+        $('.project-add-place-show-add-template .project-add-group-cell-07 .form-dropdown-list ul').prepend(newHTML);
+        $('.project-add-load').removeClass('loading disabled');
+    });
+}
+
+function reloadProjectAddPlaces(curInput) {
+    var curPlace = curInput.val();
+    var curBlock = curInput.parents().filter('.project-add-place');
+    console.log(curPlace);
+    $.ajax({
+        type: 'POST',
+        url: 'ajax/project-add-places.json',
+        dataType: 'json',
+        data: JSON.stringify({'place': curPlace}),
+        cache: false
+    }).done(function(data) {
+        var newHTML = '';
+        for (var i = 0; i < data.length; i++) {
+            newHTML += '<li><span data-id="' + data[i].id + '">' + data[i].name + '</span></li>';
+        }
+        $('.project-add-place-show-add-template .project-add-group-cell-08 .form-dropdown-list ul').html(newHTML);
     });
 }

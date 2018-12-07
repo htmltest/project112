@@ -7,289 +7,289 @@
         <div class="form-label form-label-show-time">Театр</div>
         <div class="form-input"><input type="text" name="theatre" value="" id="project-theatre" class="required" placeholder="Введите название театра" /></div>
 
-        <div class="project-add-programm">
-            <div class="project-add-programm-title">Программа</div>
-            <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="1" checked="checked" /><span>Общая</span></label></div>
-            <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="2" /><span>Межрегиональная</span></label></div>
-            <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="3" /><span>Зарубежная</span></label></div>
-            <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="4" /><span>Детская</span></label></div>
-            <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="5" /><span>Специальная</span></label></div>
-        </div>
+        <!-- project add load -->
+        <div class="project-add-load disabled">
 
-        <div class="project-add-block">
-            <div class="project-add-block-title">Расписание</div>
+            <div class="project-add-programm">
+                <div class="project-add-programm-title">Программа</div>
+                <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="1" checked="checked" /><span>Общая</span></label></div>
+                <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="2" /><span>Межрегиональная</span></label></div>
+                <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="3" /><span>Зарубежная</span></label></div>
+                <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="4" /><span>Детская</span></label></div>
+                <div class="project-add-programm-radio"><label><input type="radio" name="programm" value="5" /><span>Специальная</span></label></div>
+            </div>
 
-            <!-- project add group -->
-            <div class="project-add-group">
+            <div class="project-add-block">
+                <div class="project-add-block-title">Расписание</div>
 
-                <div class="project-add-group-content">
-                </div>
+                <!-- project add group -->
+                <div class="project-add-group">
 
-                <div class="project-add-group-add-template">
-                    <div class="project-add-place">
-                        <div class="project-add-place-header">
-                            <div class="project-add-place-header-drag"></div>
-                            <div class="project-add-place-header-title"><div class="form-input"><input type="text" name="place[]" value="" placeholder="Введите название площадки" /></div></div>
-                            <a href="#" class="project-add-place-header-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a>
-                        </div>
-                        <div class="project-add-group-headers">
-                            <div class="project-add-group-headers-item project-add-group-headers-item-06">Спектакль</div>
-                            <div class="project-add-group-headers-item project-add-group-headers-item-07">Зал</div>
-                            <div class="project-add-group-headers-item project-add-group-headers-item-08">Дата</div>
-                            <div class="project-add-group-headers-item">Время</div>
-                        </div>
-                        <div class="project-add-place-content">
-                        </div>
-                        <div class="project-add-place-show-add-template">
-                            <div class="project-add-group-row">
-                                <div class="project-add-group-row-drag"></div>
-                                <div class="project-add-group-cell-07">
-                                    <div class="form-dropdown">
-                                        <input type="hidden" name="show[]" value="" />
-                                        <div class="form-dropdown-value">Дюймовочка</div>
-                                        <div class="form-dropdown-list">
-                                            <ul>
-                                                <li><span data-id="1">Алиса в стране чудес</span></li>
-                                                <li><span data-id="2">Новый год</span></li>
-                                                <li><span data-id="3">Чудо юдо</span></li>
-                                                <li><span data-id="4">Бременские музыканты</span></li>
-                                                <li><a href="windows/show-add.html" class="window-link window-add">Добавить спектакль</a></li>
-                                            </ul>
+                    <div class="project-add-group-content">
+                    </div>
+
+                    <div class="project-add-group-add-template">
+                        <div class="project-add-place">
+                            <div class="project-add-place-header">
+                                <div class="project-add-place-header-drag"></div>
+                                <div class="project-add-place-header-title"><div class="form-input"><input type="text" name="place[]" value="" placeholder="Введите название площадки" /></div></div>
+                                <a href="#" class="project-add-place-header-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a>
+                            </div>
+                            <div class="project-add-group-headers">
+                                <div class="project-add-group-headers-item project-add-group-headers-item-06">Спектакль</div>
+                                <div class="project-add-group-headers-item project-add-group-headers-item-07">Зал</div>
+                                <div class="project-add-group-headers-item project-add-group-headers-item-08">Дата</div>
+                                <div class="project-add-group-headers-item">Время</div>
+                            </div>
+                            <div class="project-add-place-content">
+                            </div>
+                            <div class="project-add-place-show-add-template">
+                                <div class="project-add-group-row">
+                                    <div class="project-add-group-row-drag"></div>
+                                    <div class="project-add-group-cell-07">
+                                        <div class="form-dropdown">
+                                            <input type="hidden" name="show[]" value="" />
+                                            <div class="form-dropdown-value"></div>
+                                            <div class="form-dropdown-list">
+                                                <ul>
+                                                    <li><a href="windows/show-add.html" class="window-link window-add">Добавить спектакль</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="project-add-group-cell-08">
-                                    <div class="form-dropdown">
-                                        <input type="hidden" name="scene[]" value="" />
-                                        <div class="form-dropdown-value">Малый зал</div>
-                                        <div class="form-dropdown-list">
-                                            <ul>
-                                                <li><span data-id="1">Малый зал</span></li>
-                                                <li><span data-id="2">Большой зал</span></li>
-                                            </ul>
+                                    <div class="project-add-group-cell-08">
+                                        <div class="form-dropdown">
+                                            <input type="hidden" name="scene[]" value="" />
+                                            <div class="form-dropdown-value"></div>
+                                            <div class="form-dropdown-list">
+                                                <ul>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="project-add-group-cell-09"><div class="form-input form-input-date_"><input type="text" name="date[]" value="" /></div></div>
+                                    <div class="project-add-group-cell-10"><div class="form-input"><input type="text" name="time[]" value="" /></div></div>
+                                    <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
                                 </div>
-                                <div class="project-add-group-cell-09"><div class="form-input form-input-date"><input type="text" name="date[]" value="" /></div></div>
-                                <div class="project-add-group-cell-10"><div class="form-input"><input type="text" name="time[]" value="" /></div></div>
-                                <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
+                            </div>
+                            <div class="project-add-place-show-add-link">
+                                <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Еще спектакль</a>
                             </div>
                         </div>
-                        <div class="project-add-place-show-add-link">
-                            <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Еще спектакль</a>
-                        </div>
+                    </div>
+
+                    <div class="project-add-group-add-link">
+                        <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить площадку</a>
                     </div>
                 </div>
-
-                <div class="project-add-group-add-link">
-                    <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить площадку</a>
-                </div>
+                <!-- project add group END -->
             </div>
-            <!-- project add group END -->
+
+            <!-- proejct add block -->
+            <div class="project-add-block">
+                <div class="project-add-block-title">Смета</div>
+
+                <!-- project add group -->
+                <div class="project-add-group">
+                    <div class="project-add-group-header">
+                        <div class="project-add-group-header-number">1.</div>
+                        <div class="project-add-group-header-title">Обеспечение условий по приему</div>
+                        <div class="project-add-group-header-notice">и направлению участников творческих проектов</div>
+                        <div class="project-add-group-header-summ">0, 00</div>
+                    </div>
+
+                    <div class="project-add-group-headers">
+                        <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
+                        <div class="project-add-group-headers-item">&nbsp;</div>
+                    </div>
+
+                    <div class="project-add-group-content">
+                    </div>
+
+                    <div class="project-add-group-add-template">
+                        <div class="project-add-group-row">
+                            <div class="project-add-group-row-drag"></div>
+                            <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
+                            <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
+                            <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
+                            <div class="project-add-group-row-checkbox">
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input type="checkbox" name="federal[]" checked="checked" />
+                                        <span class="form-checkbox-icon"></span>
+                                        <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-add-group-add-link">
+                        <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
+                    </div>
+                </div>
+                <!-- project add group END -->
+
+                <!-- project add group -->
+                <div class="project-add-group">
+                    <div class="project-add-group-header">
+                        <div class="project-add-group-header-number">2.</div>
+                        <div class="project-add-group-header-title">Обеспечение доставки</div>
+                        <div class="project-add-group-header-notice">коллективов, артистов, музыкантов</div>
+                        <div class="project-add-group-header-summ">0, 00</div>
+                    </div>
+
+                    <div class="project-add-group-headers">
+                        <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
+                        <div class="project-add-group-headers-item">&nbsp;</div>
+                    </div>
+
+                    <div class="project-add-group-content">
+                    </div>
+
+                    <div class="project-add-group-add-template">
+                        <div class="project-add-group-row">
+                            <div class="project-add-group-row-drag"></div>
+                            <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
+                            <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
+                            <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
+                            <div class="project-add-group-row-checkbox">
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input type="checkbox" name="federal[]" checked="checked" />
+                                        <span class="form-checkbox-icon"></span>
+                                        <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-add-group-add-link">
+                        <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
+                    </div>
+                </div>
+                <!-- project add group END -->
+
+                <!-- project add group -->
+                <div class="project-add-group">
+                    <div class="project-add-group-header">
+                        <div class="project-add-group-header-number">3.</div>
+                        <div class="project-add-group-header-title">Гонорары</div>
+                        <div class="project-add-group-header-notice">творческим работникам, творческим коллективам, специалистам</div>
+                        <div class="project-add-group-header-summ">0, 00</div>
+                    </div>
+
+                    <div class="project-add-group-headers">
+                        <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
+                        <div class="project-add-group-headers-item">&nbsp;</div>
+                    </div>
+
+                    <div class="project-add-group-content">
+                    </div>
+
+                    <div class="project-add-group-add-template">
+                        <div class="project-add-group-row">
+                            <div class="project-add-group-row-drag"></div>
+                            <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
+                            <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
+                            <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
+                            <div class="project-add-group-row-checkbox">
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input type="checkbox" name="federal[]" checked="checked" />
+                                        <span class="form-checkbox-icon"></span>
+                                        <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-add-group-add-link">
+                        <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
+                    </div>
+                </div>
+                <!-- project add group END -->
+
+                <!-- project add group -->
+                <div class="project-add-group">
+                    <div class="project-add-group-header">
+                        <div class="project-add-group-header-number">4.</div>
+                        <div class="project-add-group-header-title">Рекламно-информационное обеспечение</div>
+                        <div class="project-add-group-header-summ">0, 00</div>
+                    </div>
+
+                    <div class="project-add-group-headers">
+                        <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
+                        <div class="project-add-group-headers-item">&nbsp;</div>
+                    </div>
+
+                    <div class="project-add-group-content">
+                    </div>
+
+                    <div class="project-add-group-add-template">
+                        <div class="project-add-group-row">
+                            <div class="project-add-group-row-drag"></div>
+                            <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
+                            <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
+                            <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
+                            <div class="project-add-group-row-checkbox">
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input type="checkbox" name="federal[]" checked="checked" />
+                                        <span class="form-checkbox-icon"></span>
+                                        <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-add-group-add-link">
+                        <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
+                    </div>
+                </div>
+                <!-- project add group END -->
+
+                <div class="project-add-summ">
+                    <div class="project-add-summ-title">Итого</div>
+                    <div class="project-add-summ-value">0,00</div>
+                </div>
+
+            </div>
+            <!-- proejct add block END -->
+
         </div>
-
-        <!-- proejct add block -->
-        <div class="project-add-block">
-            <div class="project-add-block-title">Смета</div>
-
-            <!-- project add group -->
-            <div class="project-add-group">
-                <div class="project-add-group-header">
-                    <div class="project-add-group-header-number">1.</div>
-                    <div class="project-add-group-header-title">Обеспечение условий по приему</div>
-                    <div class="project-add-group-header-notice">и направлению участников творческих проектов</div>
-                    <div class="project-add-group-header-summ">0, 00</div>
-                </div>
-
-                <div class="project-add-group-headers">
-                    <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
-                    <div class="project-add-group-headers-item">&nbsp;</div>
-                </div>
-
-                <div class="project-add-group-content">
-                </div>
-
-                <div class="project-add-group-add-template">
-                    <div class="project-add-group-row">
-                        <div class="project-add-group-row-drag"></div>
-                        <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
-                        <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                        <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
-                        <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
-                        <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
-                        <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
-                        <div class="project-add-group-row-checkbox">
-                            <div class="form-checkbox">
-                                <label>
-                                    <input type="checkbox" name="federal[]" checked="checked" />
-                                    <span class="form-checkbox-icon"></span>
-                                    <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-add-group-add-link">
-                    <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
-                </div>
-            </div>
-            <!-- project add group END -->
-
-            <!-- project add group -->
-            <div class="project-add-group">
-                <div class="project-add-group-header">
-                    <div class="project-add-group-header-number">2.</div>
-                    <div class="project-add-group-header-title">Обеспечение доставки</div>
-                    <div class="project-add-group-header-notice">коллективов, артистов, музыкантов</div>
-                    <div class="project-add-group-header-summ">0, 00</div>
-                </div>
-
-                <div class="project-add-group-headers">
-                    <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
-                    <div class="project-add-group-headers-item">&nbsp;</div>
-                </div>
-
-                <div class="project-add-group-content">
-                </div>
-
-                <div class="project-add-group-add-template">
-                    <div class="project-add-group-row">
-                        <div class="project-add-group-row-drag"></div>
-                        <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
-                        <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                        <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
-                        <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
-                        <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
-                        <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
-                        <div class="project-add-group-row-checkbox">
-                            <div class="form-checkbox">
-                                <label>
-                                    <input type="checkbox" name="federal[]" checked="checked" />
-                                    <span class="form-checkbox-icon"></span>
-                                    <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-add-group-add-link">
-                    <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
-                </div>
-            </div>
-            <!-- project add group END -->
-
-            <!-- project add group -->
-            <div class="project-add-group">
-                <div class="project-add-group-header">
-                    <div class="project-add-group-header-number">3.</div>
-                    <div class="project-add-group-header-title">Гонорары</div>
-                    <div class="project-add-group-header-notice">творческим работникам, творческим коллективам, специалистам</div>
-                    <div class="project-add-group-header-summ">0, 00</div>
-                </div>
-
-                <div class="project-add-group-headers">
-                    <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
-                    <div class="project-add-group-headers-item">&nbsp;</div>
-                </div>
-
-                <div class="project-add-group-content">
-                </div>
-
-                <div class="project-add-group-add-template">
-                    <div class="project-add-group-row">
-                        <div class="project-add-group-row-drag"></div>
-                        <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
-                        <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                        <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
-                        <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
-                        <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
-                        <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
-                        <div class="project-add-group-row-checkbox">
-                            <div class="form-checkbox">
-                                <label>
-                                    <input type="checkbox" name="federal[]" checked="checked" />
-                                    <span class="form-checkbox-icon"></span>
-                                    <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-add-group-add-link">
-                    <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
-                </div>
-            </div>
-            <!-- project add group END -->
-
-            <!-- project add group -->
-            <div class="project-add-group">
-                <div class="project-add-group-header">
-                    <div class="project-add-group-header-number">4.</div>
-                    <div class="project-add-group-header-title">Рекламно-информационное обеспечение</div>
-                    <div class="project-add-group-header-summ">0, 00</div>
-                </div>
-
-                <div class="project-add-group-headers">
-                    <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
-                    <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
-                    <div class="project-add-group-headers-item">&nbsp;</div>
-                </div>
-
-                <div class="project-add-group-content">
-                </div>
-
-                <div class="project-add-group-add-template">
-                    <div class="project-add-group-row">
-                        <div class="project-add-group-row-drag"></div>
-                        <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
-                        <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                        <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" /></div></div>
-                        <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0" /></div></div>
-                        <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0" readonly="readonly" /></div></div>
-                        <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
-                        <div class="project-add-group-row-checkbox">
-                            <div class="form-checkbox">
-                                <label>
-                                    <input type="checkbox" name="federal[]" checked="checked" />
-                                    <span class="form-checkbox-icon"></span>
-                                    <span class="form-checkbox-text">Оплачивается из федерального бюджета</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-add-group-add-link">
-                    <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить пункт</a>
-                </div>
-            </div>
-            <!-- project add group END -->
-
-            <div class="project-add-summ">
-                <div class="project-add-summ-title">Итого</div>
-                <div class="project-add-summ-value">0,00</div>
-            </div>
-
-        </div>
-        <!-- proejct add block END -->
+        <!-- project add load END -->
 
         <div class="form-ctrl">
             <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
