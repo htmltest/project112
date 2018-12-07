@@ -6,11 +6,14 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic" />
         <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.css" />
 
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/jquery.maskedinput.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/validation/messages_ru.js"></script>
+        <script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="js/jquery-ui-1.12.1.custom/datepicker-ru.js"></script>
         <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=device-width" />
@@ -85,6 +88,58 @@
 
                         <div class="header-projects-filter">
                             <a href="#" class="header-projects-filter-link">Все проекты</a>
+                            <div class="header-projects-filter-window">
+                                <form action="#" method="post">
+                                    <div class="header-projects-filter-block">
+                                        <div class="header-projects-filter-title"><a href="#">Дата начала</a></div>
+                                        <div class="header-projects-filter-content">
+                                            <div class="form-input form-input-date"><input type="text" name="dateStart" id="filterDateStart" value="" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="header-projects-filter-block">
+                                        <div class="header-projects-filter-title"><a href="#">Дата окончания</a></div>
+                                        <div class="header-projects-filter-content">
+                                            <div class="form-input form-input-date"><input type="text" name="dateEnd" id="filterDateEnd" value="" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="header-projects-filter-block">
+                                        <div class="header-projects-filter-title"><a href="#">Программа</a></div>
+                                        <div class="header-projects-filter-content">
+                                            <div class="header-projects-filter-checkboxes" id="filterProgramms">
+                                                <div class="header-projects-filter-checkbox"><label><input type="checkbox" name="programm" value="1" /><span>Общая</span></label></div>
+                                                <div class="header-projects-filter-checkbox"><label><input type="checkbox" name="programm" value="2" /><span>Межрегиональная</span></label></div>
+                                                <div class="header-projects-filter-checkbox"><label><input type="checkbox" name="programm" value="3" /><span>Зарубежная</span></label></div>
+                                                <div class="header-projects-filter-checkbox"><label><input type="checkbox" name="programm" value="4" /><span>Детская</span></label></div>
+                                                <div class="header-projects-filter-checkbox"><label><input type="checkbox" name="programm" value="5" /><span>Специальная</span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="header-projects-filter-block">
+                                        <div class="header-projects-filter-title"><a href="#">Театр</a></div>
+                                        <div class="header-projects-filter-content">
+                                            <div class="header-projects-filter-variants">
+                                                <div class="form-input"><input type="text" name="theatre" value="" id="filter-theatre" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="header-projects-filter-block">
+                                        <div class="header-projects-filter-title"><a href="#">Принимающая площадка</a></div>
+                                        <div class="header-projects-filter-content">
+                                            <div class="header-projects-filter-variants">
+                                                <div class="form-input"><input type="text" name="place" value="" id="filter-place" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="header-projects-filter-block">
+                                        <div class="header-projects-filter-title"><a href="#">Город</a></div>
+                                        <div class="header-projects-filter-content">
+                                            <div class="header-projects-filter-variants">
+                                                <div class="form-input"><input type="text" name="city" value="" id="filter-city" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
 
@@ -100,12 +155,12 @@
                     </div>
 
                     <div class="header-btns">
-                        <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить проект</a>
+                        <a href="windows/project-add.html" class="header-btn window-link"><span class="header-btn-add-icon"></span>Добавить проект</a>
                     </div>
                 </header>
 
                 <!-- container -->
-                <div class="container">
+                <div class="container" id="projects-container">
 
                     <!-- table list -->
                     <div class="table-list">

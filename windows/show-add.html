@@ -1,0 +1,64 @@
+<div class="project-window">
+    <div class="window-title">Добавление спектакля</div>
+
+    <form action="#" method="post" enctype="multipart/form-data" class="form-show-add">
+        <div class="form-input form-input-project-name"><input type="text" name="name" value="" placeholder="Введите название спектакля" class="required" /></div>
+
+        <div class="form-input form-input-show-descr"><textarea name="descr" rows="5" cols="10" placeholder="Введите описание спектакля"></textarea></div>
+
+        <div class="form-label form-label-show-time">Продолжительность</div>
+
+        <div class="form-show-time">
+            <div class="form-show-time-input"><div class="form-input"><input type="text" name="time" value="" /></div></div>
+            <div class="form-show-time-antrakt">
+                <div class="form-input"><input type="text" name="antrakt[]" value="" placeholder="Антракт 1" /></div>
+                <div class="form-input"><input type="text" name="antrakt[]" value="" placeholder="Антракт 2" /></div>
+                <a href="#" class="form-show-time-antrakt-remove"></a>
+            </div>
+            <div class="form-show-time-antrakt-link"><a href="#">Антракты</a></div>
+        </div>
+
+        <div class="form-label form-label-show-time">Режиссер</div>
+        <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
+
+        <div class="show-authors">
+            <div class="show-author">
+                <div class="form-label form-label-show-time">Композитор</div>
+                <div class="form-input"><input type="text" name="music" value="" /><a href="#" class="show-author-remove"></a></div>
+            </div>
+            <div class="show-author">
+                <div class="form-label form-label-show-time">Художник</div>
+                <div class="form-input"><input type="text" name="designer" value="" /><a href="#" class="show-author-remove"></a></div>
+            </div>
+            <div class="show-author">
+                <div class="form-label form-label-show-time">Хореограф</div>
+                <div class="form-input"><input type="text" name="dance" value="" /><a href="#" class="show-author-remove"></a></div>
+            </div>
+            <div class="show-authors-links">
+                <div class="show-authors-link"><a href="#">Композитор</a></div>
+                <div class="show-authors-link"><a href="#">Художник</a></div>
+                <div class="show-authors-link"><a href="#">Хореограф</a></div>
+            </div>
+        </div>
+
+        <div class="show-group-title">Фотоматериалы</div>
+
+        <div class="show-photos">
+            <div class="show-photo">
+                <div class="show-photo-input"><span class="show-photo-input-icon"></span>Добавить изображение<input type="file" name="files[]" /></div>
+                <div class="show-photo-name"><div class="show-photo-name-text"></div><div class="show-photo-name-remove"></div><div class="show-photo-size"></div></div>
+            </div>
+        </div>
+
+        <div class="show-group-title">Видеоматериалы</div>
+        <div class="form-label form-label-show-video">Ссылка на видео</div>
+        <div class="form-input"><input type="text" name="video[]" value="" /></div>
+        <div class="form-show-video-add-template"><div class="form-input"><input type="text" name="video[]" value="" /></div><a href="#" class="show-video-remove"></a></div>
+        <div class="form-show-video-add-link"><a href="#">Еще видео</a></div>
+
+        <div class="form-ctrl">
+            <div class="form-submit"><input type="submit" value="Сохранить" class="btn" /></div>
+        </div>
+    </form>
+
+</div>
