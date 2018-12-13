@@ -146,6 +146,7 @@ header::after {content:""; display:block; clear:both}
 .header-projects-filter-variant-remove svg {display:block}
 .header-projects-filter-variant-remove path {fill:#131820; transition:all 0.2s}
 .header-projects-filter-variant-remove:hover path {fill:#7ac142}
+.header-projects-filter-variants-onlyone .header-projects-filter-variant+.form-input {display:none}
 
 #projects-container {position:relative}
 #projects-container .loading {position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(19, 24, 32, 0.8) url(../images/loading.gif) no-repeat center}
