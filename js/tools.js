@@ -327,6 +327,7 @@ $(document).ready(function() {
                 var maxDateArray = maxDateText.split('.');
                 maxDate = new Date(maxDateArray[2] + '-' + maxDateArray[1] + '-' + maxDateArray[0]);
             }
+            console.log(1);
             $(this).datepicker({
                 language: 'ru',
                 minDate: minDate,
