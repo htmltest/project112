@@ -578,6 +578,7 @@ function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
                                     if (confirm('Все введеные данные будут удалены')) {
                                         $(this).data('oldvalue', ui.item.value);
                                         this.value = ui.item.value;
+                                        $('#project-theatre-id').val(ui.item.id);
                                         $('.project-add-place-content').html('');
                                         $('.project-add-group-content').html('');
                                         reloadProjectAdd();
@@ -586,10 +587,12 @@ function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
                                     }
                                 } else {
                                     this.value = ui.item.value;
+                                    $('#project-theatre-id').val(ui.item.id);
                                 }
                             } else {
                                 $(this).data('oldvalue', ui.item.value);
                                 this.value = ui.item.value;
+                                $('#project-theatre-id').val(ui.item.id);
                                 reloadProjectAdd();
                             }
                             return false;
@@ -612,8 +615,10 @@ function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
                     $.ajax({
                         type: 'POST',
                         url: $(form).attr('action'),
+                        processData: false,
+                        contentType: false,
                         dataType: 'json',
-                        data: $(form).serialize(),
+                        data: new FormData(form),
                         cash: false,
                     }).done(function(data) {
                         if (data.status == 'ok') {
@@ -769,7 +774,7 @@ function reloadProjectAddPlaces(curInput) {
         }
         curBlock.find('.project-add-place-show-add-template .project-add-group-cell-08 .form-dropdown-list ul').html(newHTML);
         curBlock.find('.project-add-place-content, .project-add-place-show-add-link').show();
-        
+
     });
 }
 
