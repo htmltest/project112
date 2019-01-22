@@ -736,13 +736,13 @@ function updateFilter() {
 }
 
 function reloadProjectAdd() {
-    var curTheatre = $('#project-theatre').val();
+    var curTheatre = $('#project-theatre-id').val();
     $('.project-add-load').addClass('loading');
     $.ajax({
         type: 'POST',
         url: 'ajax/project-add-shows.json',
         dataType: 'json',
-        data: JSON.stringify({'theatre': curTheatre}),
+        data: JSON.stringify({'theatrid': curTheatre}),
         cache: false
     }).done(function(data) {
         var newHTML = '';
@@ -765,7 +765,7 @@ function reloadProjectAddPlaces(curInput) {
         type: 'POST',
         url: 'ajax/project-add-places.json',
         dataType: 'json',
-        data: JSON.stringify({'place': curPlace}),
+        data: JSON.stringify({'place': curPlace, 'theatrid': $('#project-theatre-id').val()}),
         cache: false
     }).done(function(data) {
         var newHTML = '';
