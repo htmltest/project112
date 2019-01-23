@@ -494,6 +494,14 @@ $(document).ready(function() {
         recalcProject();
     });
 
+    $('.gallery').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false
+    });
+
 });
 
 function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
@@ -602,6 +610,10 @@ function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
                     };
                 }
             });
+        });
+
+        $('.project-theatre-manager').each(function() {
+            reloadProjectAdd();
         });
 
         if ($('.form-show-add').length == 1) {
@@ -742,7 +754,7 @@ function reloadProjectAdd() {
         type: 'POST',
         url: 'ajax/project-add-shows.json',
         dataType: 'json',
-        data: JSON.stringify({'theatrid': curTheatre}),
+        data: {theatrid: curTheatre},
         cache: false
     }).done(function(data) {
         var newHTML = '';
@@ -765,7 +777,7 @@ function reloadProjectAddPlaces(curInput) {
         type: 'POST',
         url: 'ajax/project-add-places.json',
         dataType: 'json',
-        data: JSON.stringify({'place': curPlace, 'theatrid': $('#project-theatre-id').val()}),
+        data: {place: curPlace, theatrid: $('#project-theatre-id').val()},
         cache: false
     }).done(function(data) {
         var newHTML = '';

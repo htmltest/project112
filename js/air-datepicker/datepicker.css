@@ -171,7 +171,7 @@
 .datepickers-container {
   position: absolute;
   left: 0;
-  top: 0; }
+  top: -10px; }
   @media print {
     .datepickers-container {
       display: none; } }
