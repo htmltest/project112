@@ -149,6 +149,10 @@
     text-overflow: ellipsis;
     font-size: 12px;
 }
+.ui-menu .ui-menu-item-wrapper b {
+    font-weight: normal;
+    background: #ffff00;
+}
 .ui-menu .ui-menu-divider {
 }
 .ui-menu .ui-state-focus,
