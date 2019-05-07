@@ -5,7 +5,7 @@
         <div class="form-input form-input-project-name"><input type="text" name="name" value="" class="required" placeholder="Введите название проекта" /></div>
 
         <div class="form-label form-label-show-time">Театр</div>
-        <div class="form-input"><input type="text" name="theatre" value="" id="project-theatre" class="required" placeholder="Введите название театра" /><input type="hidden" name="theatreID" value="" id="project-theatre-id" /><a href="#" class="project-theatre-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
+        <div class="form-input"><input type="text" name="theatre" value="" id="project-theatre" class="required" placeholder="Введите название театра" /><input type="hidden" name="theatreID" value="" id="project-theatre-id" /></div>
 
         <!-- project add load -->
         <div class="project-add-load disabled">
@@ -21,8 +21,6 @@
 
             <div class="project-add-block project-add-block-1">
                 <div class="project-add-block-title">Расписание</div>
-
-                <div class="project-add-block-error"><input type="hidden" name="project-add-block-places-count" id="project-add-block-places-count" value="" class="required" data-msg="Необходимо выбрать хотя бы одну площадку" /></div>
 
                 <!-- project add group -->
                 <div class="project-add-group">
@@ -75,7 +73,7 @@
                                 </div>
                             </div>
                             <div class="project-add-place-show-add-link">
-                                <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Добавить выступление</a>
+                                <a href="#" class="header-btn"><span class="header-btn-add-icon"></span>Еще спектакль</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +102,7 @@
                         <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
                         <div class="project-add-group-headers-item">&nbsp;</div>
                     </div>
@@ -117,9 +115,9 @@
                             <div class="project-add-group-row-drag"></div>
                             <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
                             <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="" class="project-add-count" /></div></div>
-                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="" class="project-add-price" /></div></div>
-                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="" class="project-add-summ" disabled="disabled" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" class="project-add-count" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0.00" class="project-add-price" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0.00" class="project-add-summ" readonly="readonly" /></div></div>
                             <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
                             <div class="project-add-group-row-checkbox">
                                 <div class="form-checkbox">
@@ -152,7 +150,7 @@
                         <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
                         <div class="project-add-group-headers-item">&nbsp;</div>
                     </div>
@@ -165,9 +163,9 @@
                             <div class="project-add-group-row-drag"></div>
                             <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
                             <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="" class="project-add-count" /></div></div>
-                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="" class="project-add-price" /></div></div>
-                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="" class="project-add-summ" disabled="disabled" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" class="project-add-count" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0.00" class="project-add-price" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0.00" class="project-add-summ" readonly="readonly" /></div></div>
                             <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
                             <div class="project-add-group-row-checkbox">
                                 <div class="form-checkbox">
@@ -200,7 +198,7 @@
                         <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
                         <div class="project-add-group-headers-item">&nbsp;</div>
                     </div>
@@ -213,9 +211,9 @@
                             <div class="project-add-group-row-drag"></div>
                             <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
                             <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="" class="project-add-count" /></div></div>
-                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="" class="project-add-price" /></div></div>
-                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="" class="project-add-summ" disabled="disabled" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" class="project-add-count" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0.00" class="project-add-price" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0.00" class="project-add-summ" readonly="readonly" /></div></div>
                             <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
                             <div class="project-add-group-row-checkbox">
                                 <div class="form-checkbox">
@@ -247,7 +245,7 @@
                         <div class="project-add-group-headers-item project-add-group-headers-item-01">Название</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-02">Комментарий</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-03">Кол-во</div>
-                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость за ед.</div>
+                        <div class="project-add-group-headers-item project-add-group-headers-item-04">Стоимость<br /> за ед.</div>
                         <div class="project-add-group-headers-item project-add-group-headers-item-05">Сумма</div>
                         <div class="project-add-group-headers-item">&nbsp;</div>
                     </div>
@@ -260,9 +258,9 @@
                             <div class="project-add-group-row-drag"></div>
                             <div class="project-add-group-cell-01"><div class="form-input"><input type="text" name="name[]" value="" /></div></div>
                             <div class="project-add-group-cell-02"><div class="form-input"><input type="text" name="comment[]" value="" /></div></div>
-                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="" class="project-add-count" /></div></div>
-                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="" class="project-add-price" /></div></div>
-                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="" class="project-add-summ" disabled="disabled" /></div></div>
+                            <div class="project-add-group-cell-03"><div class="form-input"><input type="text" name="count[]" value="1" class="project-add-count" /></div></div>
+                            <div class="project-add-group-cell-04"><div class="form-input"><input type="text" name="price[]" value="0.00" class="project-add-price" /></div></div>
+                            <div class="project-add-group-cell-05"><div class="form-input"><input type="text" name="summ[]" value="0.00" class="project-add-summ" readonly="readonly" /></div></div>
                             <div class="project-add-group-cell-06"><a href="#" class="project-add-group-row-remove"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 11.2 11.2"><path d="M11.2,1.12,10.08,0,5.6,4.48,1.12,0,0,1.12,4.48,5.6,0,10.08,1.12,11.2,5.6,6.72l4.48,4.48,1.12-1.12L6.72,5.6Zm0,0"/></svg></a></div>
                             <div class="project-add-group-row-checkbox">
                                 <div class="form-checkbox">
