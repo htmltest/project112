@@ -11,8 +11,6 @@ $.fn.datepicker.language['ru'] =  {
     firstDay: 1
 };
 
-var curLinkWindowAdd = null;
-
 $(document).ready(function() {
 
     $('.side').jScrollPane({autoReinitialise: true, verticalGutter: 0});
@@ -22,7 +20,6 @@ $(document).ready(function() {
         if (!curLink.hasClass('window-add')) {
             windowOpen(curLink.attr('href'));
         } else {
-            curLinkWindowAdd = curLink;
             windowOpen(curLink.attr('href'), true);
         }
         e.preventDefault();
@@ -323,6 +320,43 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.project-add-block-1').find('.project-add-group-content .project-add-place-header-title input:not(.ui-autocomplete-input)').each(function() {
+        var curInput = $(this);
+        $.ajax({
+            url: 'ajax/filter-place.json',
+            dataType: 'json',
+            success: function(data) {
+                curInput.autocomplete({
+                    minLength: 0,
+                    source: data,
+                    classes: {
+                        'ui-autocomplete': 'ui-autocomplete-2'
+                    },
+                    select: function(event, ui) {
+                        $(this).parent().addClass('form-input-selected');
+                        $(this).trigger('blur').prop('disabled', true);
+                        this.value = ui.item.value;
+                        $(this).parents().filter('.project-add-place').find('.project-add-place-content').html('');
+                        reloadProjectAddPlaces($(this));
+                        $('#project-add-block-places-count').val('yes').parent().find('label.error').remove();
+                        $(this).blur();
+                        return false;
+                    }
+                }).focus(function() {
+                    $(this).data('uiAutocomplete').search($(this).val());
+                }).autocomplete('instance')._renderItem = function(ul, item) {
+                    var term = this.element.val();
+                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var t = item.value.replace(regex , "<b>$&</b>");
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                };
+            }
+        });
+        if (curInput.parent().find('input[type="hidden"]').length > 0) {
+            reloadProjectAddPlaces(curInput);
+        }
+    });
+
     $('body').on('click', '.project-add-place-show-add-link a', function(e) {
         var curBlock = $(this).parents().filter('.project-add-place');
         curBlock.find('.project-add-place-content').append(curBlock.find('.project-add-place-show-add-template').html());
@@ -587,6 +621,99 @@ $(document).ready(function() {
         }
     });
 
+    $('.project-add-block-2 .project-add-group-content').each(function() {
+        Sortable.create(this, {
+            handle: '.project-add-group-row-drag',
+            animation: 150
+        });
+    });
+
+    $('.project-add-block-1 .project-add-group-content').each(function() {
+        Sortable.create(this, {
+            handle: '.project-add-place-header-drag',
+            animation: 150
+        });
+    });
+
+    $('#project-theatre').each(function() {
+        var curInput = $(this);
+        $.ajax({
+            url: 'ajax/filter-theatre.json',
+            dataType: 'json',
+            success: function(data) {
+                curInput.autocomplete({
+                    minLength: 0,
+                    source: data,
+                    classes: {
+                        'ui-autocomplete': 'ui-autocomplete-2'
+                    },
+                    select: function(event, ui) {
+                        this.value = ui.item.value;
+                        $(this).parent().addClass('form-input-selected');
+                        $(this).trigger('blur').prop('disabled', true);
+                        $('#project-theatre-id').val(ui.item.id);
+                        $('.project-add-place-content').html('');
+                        $('.project-add-group-content').html('');
+                        reloadProjectAdd();
+                        $(this).blur();
+                        return false;
+                    }
+                }).focus(function() {
+                    $(this).data('uiAutocomplete').search($(this).val());
+                }).autocomplete('instance')._renderItem = function(ul, item) {
+                    var term = this.element.val();
+                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var t = item.value.replace(regex , "<b>$&</b>");
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                };
+            }
+        });
+        if (curInput.val() != '') {
+            reloadProjectAdd();
+            recalcProject();
+        }
+    });
+
+    $('.project-theatre-remove').click(function(e) {
+        if (confirm('Все введеные данные будут удалены')) {
+            $('#project-theatre-id').val('');
+            $('.project-add-place-content').html('');
+            $('.project-add-group-content').html('');
+            $('#project-theatre').parent().removeClass('form-input-selected');
+            $('#project-theatre').prop('disabled', false).val('').trigger('focus');
+        }
+        e.preventDefault();
+    });
+
+    $('.project-theatre-manager').each(function() {
+        reloadProjectAdd();
+    });
+
+    if ($('.form-show-add').length == 1) {
+        var showForm = $('.form-show-add');
+        var validator = showForm.validate();
+        validator.destroy();
+
+        showForm.validate({
+            ignore: '',
+            submitHandler: function(form) {
+                $.ajax({
+                    type: 'POST',
+                    url: $(form).attr('action'),
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    data: new FormData(form),
+                    cash: false,
+                }).done(function(data) {
+                    if (data.status == 'ok') {
+                        window.location.href = '4.2_tour_projects_add.html';
+                    }
+                });
+            }
+        });
+    }
+
 });
 
 function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
@@ -639,97 +766,6 @@ function windowOpen(linkWindow, addWindow = false, dataWindow, callbackWindow) {
             initForm($(this));
         });
 
-        $('.project-add-block-2 .project-add-group-content').each(function() {
-            Sortable.create(this, {
-                handle: '.project-add-group-row-drag',
-                animation: 150
-            });
-        });
-
-        $('.project-add-block-1 .project-add-group-content').each(function() {
-            Sortable.create(this, {
-                handle: '.project-add-place-header-drag',
-                animation: 150
-            });
-        });
-
-        $('#project-theatre').each(function() {
-            var curInput = $(this);
-            $.ajax({
-                url: 'ajax/filter-theatre.json',
-                dataType: 'json',
-                success: function(data) {
-                    curInput.autocomplete({
-                        minLength: 0,
-                        source: data,
-                        classes: {
-                            'ui-autocomplete': 'ui-autocomplete-2'
-                        },
-                        select: function(event, ui) {
-                            if (typeof ($(this).data('oldvalue')) != 'undefined') {
-                                if ($(this).data('oldvalue') != ui.item.value) {
-                                    if (confirm('Все введеные данные будут удалены')) {
-                                        $(this).data('oldvalue', ui.item.value);
-                                        this.value = ui.item.value;
-                                        $('#project-theatre-id').val(ui.item.id);
-                                        $('.project-add-place-content').html('');
-                                        $('.project-add-group-content').html('');
-                                        reloadProjectAdd();
-                                    } else {
-                                        this.value = $(this).data('oldvalue');
-                                    }
-                                } else {
-                                    this.value = ui.item.value;
-                                    $('#project-theatre-id').val(ui.item.id);
-                                }
-                            } else {
-                                $(this).data('oldvalue', ui.item.value);
-                                this.value = ui.item.value;
-                                $('#project-theatre-id').val(ui.item.id);
-                                reloadProjectAdd();
-                            }
-                            return false;
-                        }
-                    }).autocomplete('instance')._renderItem = function(ul, item) {
-                        return $('<li>').append('<div>' + item.value + '<span>' + item.desc + '</span></div>').appendTo(ul);
-                    };
-                }
-            });
-        });
-
-        $('.project-theatre-manager').each(function() {
-            reloadProjectAdd();
-        });
-
-        if ($('.form-show-add').length == 1) {
-            var showForm = $('.form-show-add');
-            var validator = showForm.validate();
-            validator.destroy();
-
-            showForm.validate({
-                ignore: '',
-                submitHandler: function(form) {
-                    $.ajax({
-                        type: 'POST',
-                        url: $(form).attr('action'),
-                        processData: false,
-                        contentType: false,
-                        dataType: 'json',
-                        data: new FormData(form),
-                        cash: false,
-                    }).done(function(data) {
-                        if (data.status == 'ok') {
-                            var curDropDown = curLinkWindowAdd.parents().filter('.form-dropdown');
-                            var curPlace = curLinkWindowAdd.parents().filter('.project-add-place');
-                            var newHTML = '<li><span data-id="' + data.id + '">' + data.name + '</span></li>';
-                            curPlace.find('.project-add-group-cell-07 .form-dropdown-list ul').prepend(newHTML);
-                            curDropDown.find('.form-dropdown-list ul li').eq(0).find('span').trigger('click');
-                            windowClose();
-                        }
-                    });
-                }
-            });
-        }
     });
 }
 
