@@ -170,7 +170,7 @@ $(document).ready(function() {
                     var term = this.element.val();
                     var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
                 };
             }
         });
@@ -224,7 +224,7 @@ $(document).ready(function() {
                     var term = this.element.val();
                     var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
                 };
             }
         });
@@ -278,7 +278,7 @@ $(document).ready(function() {
                     var term = this.element.val();
                     var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
                 };
             }
         });
@@ -344,7 +344,7 @@ $(document).ready(function() {
                         var term = this.element.val();
                         var regex = new RegExp('(' + term + ')', 'i');
                         var t = item.value.replace(regex , "<b>$&</b>");
-                        return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
+                        return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
                     };
                 }
             });
@@ -388,7 +388,7 @@ $(document).ready(function() {
                     var term = this.element.val();
                     var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
                 };
             }
         });
@@ -749,7 +749,7 @@ $(document).ready(function() {
                     var term = this.element.val();
                     var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
+                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
                 };
             }
         });
