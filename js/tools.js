@@ -155,14 +155,22 @@ $(document).ready(function() {
                         }
                         this.value = '';
                         return false;
+                    },
+                    open: function(event, ui) {
+                        $(this).parent().removeClass('loading');
+                    },
+                    close: function(event, ui) {
+                        $(this).parent().removeClass('loading');
                     }
                 }).focus(function() {
-                    $(this).data('uiAutocomplete').search($(this).val());
+                    var autoInput = $(this);
+                    autoInput.parent().addClass('loading');
+                    window.setTimeout(function() {autoInput.data('uiAutocomplete').search(autoInput.val());}, 50);
                 }).autocomplete('instance')._renderItem = function(ul, item) {
                     var term = this.element.val();
-                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
                 };
             }
         });
@@ -201,14 +209,22 @@ $(document).ready(function() {
                         }
                         this.value = '';
                         return false;
+                    },
+                    open: function(event, ui) {
+                        $(this).parent().removeClass('loading');
+                    },
+                    close: function(event, ui) {
+                        $(this).parent().removeClass('loading');
                     }
                 }).focus(function() {
-                    $(this).data('uiAutocomplete').search($(this).val());
+                    var autoInput = $(this);
+                    autoInput.parent().addClass('loading');
+                    window.setTimeout(function() {autoInput.data('uiAutocomplete').search(autoInput.val());}, 50);
                 }).autocomplete('instance')._renderItem = function(ul, item) {
                     var term = this.element.val();
-                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
                 };
             }
         });
@@ -247,14 +263,22 @@ $(document).ready(function() {
                         }
                         this.value = '';
                         return false;
+                    },
+                    open: function(event, ui) {
+                        $(this).parent().removeClass('loading');
+                    },
+                    close: function(event, ui) {
+                        $(this).parent().removeClass('loading');
                     }
                 }).focus(function() {
-                    $(this).data('uiAutocomplete').search($(this).val());
+                    var autoInput = $(this);
+                    autoInput.parent().addClass('loading');
+                    window.setTimeout(function() {autoInput.data('uiAutocomplete').search(autoInput.val());}, 50);
                 }).autocomplete('instance')._renderItem = function(ul, item) {
                     var term = this.element.val();
-                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
                 };
             }
         });
@@ -305,14 +329,22 @@ $(document).ready(function() {
                             $('#project-add-block-places-count').val('yes').parent().find('label.error').remove();
                             $(this).blur();
                             return false;
+                        },
+                        open: function(event, ui) {
+                            $(this).parent().removeClass('loading');
+                        },
+                        close: function(event, ui) {
+                            $(this).parent().removeClass('loading');
                         }
                     }).focus(function() {
-                        $(this).data('uiAutocomplete').search($(this).val());
+                        var autoInput = $(this);
+                        autoInput.parent().addClass('loading');
+                        window.setTimeout(function() {autoInput.data('uiAutocomplete').search(autoInput.val());}, 50);
                     }).autocomplete('instance')._renderItem = function(ul, item) {
                         var term = this.element.val();
-                        var regex = new RegExp('(' + term + ')', 'gi');
+                        var regex = new RegExp('(' + term + ')', 'i');
                         var t = item.value.replace(regex , "<b>$&</b>");
-                        return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                        return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
                     };
                 }
             });
@@ -341,17 +373,27 @@ $(document).ready(function() {
                         $('#project-add-block-places-count').val('yes').parent().find('label.error').remove();
                         $(this).blur();
                         return false;
+                    },
+                    open: function(event, ui) {
+                        $(this).parent().removeClass('loading');
+                    },
+                    close: function(event, ui) {
+                        $(this).parent().removeClass('loading');
                     }
                 }).focus(function() {
-                    $(this).data('uiAutocomplete').search($(this).val());
+                    var autoInput = $(this);
+                    autoInput.parent().addClass('loading');
+                    window.setTimeout(function() {autoInput.data('uiAutocomplete').search(autoInput.val());}, 50);
                 }).autocomplete('instance')._renderItem = function(ul, item) {
                     var term = this.element.val();
-                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
                 };
             }
         });
+        curInput.parent().addClass('form-input-selected');
+        curInput.trigger('blur').prop('disabled', true);
         if (curInput.parent().find('input[type="hidden"]').length > 0) {
             reloadProjectAddPlaces(curInput);
         }
@@ -381,6 +423,41 @@ $(document).ready(function() {
                 minDate: minDate,
                 maxDate: maxDate,
                 autoClose: true
+            });
+            if (typeof ($(this).attr('value')) != 'undefined') {
+                var curValue = $(this).val();
+                if (curValue != '') {
+                    var startDateArray = curValue.split('.');
+                    startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+                    $(this).data('datepicker').selectDate(startDate);
+                }
+            }
+            $(this).on('change', function() {
+                var curValue = $(this).val();
+                if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                    var myDatepicker = $(this).data('datepicker');
+                    if (myDatepicker) {
+                        var curValueArray = curValue.split('.');
+                        myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                    }
+                } else {
+                    var myDatepicker = $(this).data('datepicker');
+                    if (myDatepicker) {
+                        myDatepicker.clear();
+                    }
+                }
+            });
+            $(this).on('keyup', function() {
+                var curValue = $(this).val();
+                if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                    var myDatepicker = $(this).data('datepicker');
+                    if (myDatepicker) {
+                        var curValueArray = curValue.split('.');
+                        myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                        myDatepicker.show();
+                        $(this).focus();
+                    }
+                }
             });
         });
         curBlock.find('.project-add-place-content').find('.form-input-time_').removeClass('form-input-time_').addClass('form-input-time');
@@ -657,14 +734,22 @@ $(document).ready(function() {
                         reloadProjectAdd();
                         $(this).blur();
                         return false;
+                    },
+                    open: function(event, ui) {
+                        $(this).parent().removeClass('loading');
+                    },
+                    close: function(event, ui) {
+                        $(this).parent().removeClass('loading');
                     }
                 }).focus(function() {
-                    $(this).data('uiAutocomplete').search($(this).val());
+                    var autoInput = $(this);
+                    autoInput.parent().addClass('loading');
+                    window.setTimeout(function() {autoInput.data('uiAutocomplete').search(autoInput.val());}, 50);
                 }).autocomplete('instance')._renderItem = function(ul, item) {
                     var term = this.element.val();
-                    var regex = new RegExp('(' + term + ')', 'gi');
+                    var regex = new RegExp('(' + term + ')', 'i');
                     var t = item.value.replace(regex , "<b>$&</b>");
-                    return $('<li>').append('<div>' + t + '<span>' + item.desc + '</span></div>').appendTo(ul);
+                    return ul.append('<li><div>' + t + '<span>' + item.desc + '</span></div></li>');
                 };
             }
         });
@@ -830,6 +915,41 @@ function initForm(curForm) {
             maxDate: maxDate,
             autoClose: true
         });
+        if (typeof ($(this).attr('value')) != 'undefined') {
+            var curValue = $(this).val();
+            if (curValue != '') {
+                var startDateArray = curValue.split('.');
+                startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+                $(this).data('datepicker').selectDate(startDate);
+            }
+        }
+        $(this).on('change', function() {
+            var curValue = $(this).val();
+            if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                var myDatepicker = $(this).data('datepicker');
+                if (myDatepicker) {
+                    var curValueArray = curValue.split('.');
+                    myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                }
+            } else {
+                var myDatepicker = $(this).data('datepicker');
+                if (myDatepicker) {
+                    myDatepicker.clear();
+                }
+            }
+        });
+        $(this).on('keyup', function() {
+            var curValue = $(this).val();
+            if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                var myDatepicker = $(this).data('datepicker');
+                if (myDatepicker) {
+                    var curValueArray = curValue.split('.');
+                    myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                    myDatepicker.show();
+                    $(this).focus();
+                }
+            }
+        });
     });
 
     curForm.find('.form-file input').change(function() {
@@ -912,12 +1032,72 @@ function reloadProjectAdd() {
             });
             curRow.find('.project-add-group-cell-07 .form-dropdown-list ul').prepend(newHTML);
             curRow.parent().parent().find('.project-add-group-headers').css({'display': 'table'});
+
+            curRow.find('.form-input-date_').removeClass('form-input-date_').addClass('form-input-date');
+            curRow.find('.form-input-date input').each(function() {
+                $(this).attr('autocomplete', 'off');
+                var minDateText = $(this).attr('min');
+                var minDate = null;
+                if (typeof (minDateText) != 'undefined') {
+                    var minDateArray = minDateText.split('.');
+                    minDate = new Date(minDateArray[2] + '-' + minDateArray[1] + '-' + minDateArray[0]);
+                }
+                var maxDateText = $(this).attr('max');
+                var maxDate = null;
+                if (typeof (maxDateText) != 'undefined') {
+                    var maxDateArray = maxDateText.split('.');
+                    maxDate = new Date(maxDateArray[2] + '-' + maxDateArray[1] + '-' + maxDateArray[0]);
+                }
+                $(this).datepicker({
+                    language: 'ru',
+                    minDate: minDate,
+                    maxDate: maxDate,
+                    autoClose: true
+                });
+                if (typeof ($(this).attr('value')) != 'undefined') {
+                    var curValue = $(this).val();
+                    if (curValue != '') {
+                        var startDateArray = curValue.split('.');
+                        startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+                        $(this).data('datepicker').selectDate(startDate);
+                    }
+                }
+                $(this).on('change', function() {
+                    var curValue = $(this).val();
+                    if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                        var myDatepicker = $(this).data('datepicker');
+                        if (myDatepicker) {
+                            var curValueArray = curValue.split('.');
+                            myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                        }
+                    } else {
+                        var myDatepicker = $(this).data('datepicker');
+                        if (myDatepicker) {
+                            myDatepicker.clear();
+                        }
+                    }
+                });
+                $(this).on('keyup', function() {
+                    var curValue = $(this).val();
+                    if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                        var myDatepicker = $(this).data('datepicker');
+                        if (myDatepicker) {
+                            var curValueArray = curValue.split('.');
+                            myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                            myDatepicker.show();
+                            $(this).focus();
+                        }
+                    }
+                });
+            });
+            curRow.find('.form-input-time_').removeClass('form-input-time_').addClass('form-input-time');
+            curRow.find('.form-input-time input').mask('99:99');
         });
 
         $('.project-add-place .project-add-place-header-title input[type!="hidden"]').each(function() {
             reloadProjectAddPlaces($(this));
         });
-        
+
         $('.project-add-load').removeClass('loading disabled');
         windowPosition();
     });
